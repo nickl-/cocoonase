@@ -492,5 +492,3 @@ module Cocoonase
 
   end
 end
-d
-end

@@ -1,5 +1,6 @@
 require "cocoonase/version"
 require 'cocoonase/view_helpers'
+
 module Cocoonase
   extend ActiveSupport::Autoload
   #autoload :Inputs
