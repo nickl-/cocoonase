@@ -7,8 +7,8 @@ module Cocoonase
   class Engine < ::Rails::Engine
 
     config.before_initialize do
-      require 'simple_form'
-      Dir[File.expand_path('../../app/assets/inputs/*.rb', __FILE__)].each {|file| require file }
+      #require 'simple_form'
+      #Dir[File.expand_path('../../app/inputs/*.rb', __FILE__)].each {|file| require file }
 
       if config.action_view.javascript_expansions
         config.action_view.javascript_expansions[:cocoonase] = %w(cocoonase)

@@ -2,11 +2,12 @@ class CurrencyInput < SimpleForm::Inputs::NumericInput
   def input
     input_html_options[:placeholder] ||= "0.00"
     input_html_options[:step] = 0.01
-    (input_html_options[:class] |= []).append 'form-control'
+    input_html_options[:class].append 'form-control' unless
+        (input_html_options[:class] ||= []).include? 'form-control'
     input_field = super
     input_id = input_field[/ id="(\w*)/, 1]
     input_html_options[:currency] ||= currency
-    out = <<-HTML
+    out = <<HTML
 <div class="input-group">
   <span class="input-group-addon">#{input_html_options[:currency]}</span>
   #{input_field}
@@ -23,7 +24,6 @@ class CurrencyInput < SimpleForm::Inputs::NumericInput
         el.addEventListener('change', function () {
           this.step = Math.max(Math.pow(10,this.value.length-5), 0.05);
         }, false);
-
         el.addEventListener('DOMContentLoaded', currency_value, false);
         el.addEventListener('blur', currency_value, true);
         el.addEventListener('change', currency_value, true);
@@ -32,7 +32,6 @@ class CurrencyInput < SimpleForm::Inputs::NumericInput
         el.attachEvent('change', function () {
           //this.step = Math.max(Math.pow(10,this.value.length-3)/100, 0.05);
         }, false);
-
         el.attachEvent('DOMContentLoaded', currency_value, false);
         el.attachEvent('blur', currency_value, true);
         el.attachEvent('change', currency_value, true);
