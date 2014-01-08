@@ -6,7 +6,7 @@ module Rails
     class CocoonaseScaffoldControllerGenerator < Rails::Generators::ScaffoldControllerGenerator
       source_root File.expand_path("../templates", __FILE__)
       remove_hook_for :template_engine
-      hook_for :template_engine, as: :cocoon
+      hook_for :template_engine, as: :cocoonase
 
       def application_responder
         return copy_file 'application_responder.rb', 'lib/application_responder.rb' unless
