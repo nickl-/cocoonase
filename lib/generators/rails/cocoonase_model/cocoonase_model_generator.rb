@@ -5,7 +5,7 @@ require 'active_record/base'
 
 module Rails
   module Generators
-    hide_namespace 'cocoon_model'
+    hide_namespace 'cocoonase_model'
 
     class CocoonaseModelGenerator < ActiveRecord::Generators::ModelGenerator
       # TODO: include both paths and remove the migration.rb model.rb and
