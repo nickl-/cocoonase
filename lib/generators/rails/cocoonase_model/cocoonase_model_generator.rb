@@ -7,7 +7,7 @@ module Rails
   module Generators
     hide_namespace 'cocoon_model'
 
-    class CocoonModelGenerator < ActiveRecord::Generators::ModelGenerator
+    class CocoonaseModelGenerator < ActiveRecord::Generators::ModelGenerator
       # TODO: include both paths and remove the migration.rb model.rb and
       # TODO: module.rb template files which will then be redundant
       #source_root "#{base_root}/active_record/model/templates"
