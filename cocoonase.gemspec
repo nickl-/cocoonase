@@ -25,7 +25,7 @@ easily be interchanged. All dependencies, gems and client side components are al
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'cocoon', '1.1.2'
+  spec.add_dependency 'cocoon', '1.2.1'
   spec.add_dependency 'simple_form', '3.0.1'
   spec.add_dependency 'show_for', '0.3.0.rc'
   spec.add_dependency 'active_model_serializers', '0.9.0.alpha1'
