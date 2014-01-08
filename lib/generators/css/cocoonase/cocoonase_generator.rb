@@ -3,7 +3,7 @@ require "rails/generators/named_base"
 module Css
   module Generators
     #Rails::Generators.hidden_namespaces << 'css:cocoonase'
-    class CocoonaseGenerator < Rails::Generators::NamedBase
+    class CocoonaseGenerator < Rails::Generators::Base
       class_option :skip_bootstrap, :type => :boolean, :default => true,
                    :desc => "Skip installing bootstrap when found. Use --no-skip-bootstrap instead."
 
