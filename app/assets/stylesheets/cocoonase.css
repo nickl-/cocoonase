@@ -11,6 +11,12 @@
  *= require bootstrap-wysihtml5
  */
 
+.center {
+    float:none;
+    margin:0 auto;
+    width: 100%;
+}
+
 input[type='number'] {
     text-align: right;
 }
@@ -36,6 +42,18 @@ input[type='number'] {
     margin-top: -16px;
 }
 
+td.actions {
+    white-space: nowrap;
+}
+td.actions > .btn {
+    margin: 0;
+}
+
+.scaffold-table.table-condensed>thead>tr>td,
+.scaffold-table.table-condensed>tbody>tr>td,
+.scaffold-table.table-condensed>tfoot>tr>td {
+    padding: 0;
+}
 
 /*.nested-fields .close {*/
     /*margin-right: 40px;*/
@@ -81,9 +99,6 @@ input[type='number'] {
     /*width: 342px;*/
 /*}*/
 
-/*td.actions {*/
-    /*white-space: nowrap;*/
-/*}*/
 
 /*.form-actions {*/
     /*background-color: white;*/
@@ -101,12 +116,6 @@ input[type='number'] {
 /*div.subnav .nav > li.disabled > a {*/
     /*cursor: not-allowed;*/
     /*color: #ccc;*/
-/*}*/
-
-/*.center {*/
-    /*float:none;*/
-    /*margin:0 auto;*/
-    /*width: 100%;*/
 /*}*/
 
 /*p.help-block,*/
