@@ -1,0 +1,6 @@
+.row
+  .col-md-12
+    %h1= t '.show_<%= singular_name %>', default: 'Show <%= title_name %>'
+    = render 'sub_navigation', page: 'show'
+
+= render 'view_layout', item: @<%= singular_name %>

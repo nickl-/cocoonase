@@ -1,0 +1,11 @@
+%div.nested-group{id: nested.pluralize.dasherize}
+  .panel.panel-default
+    .panel-heading
+      %b= t ".#{nested}", default: defined?(nests_label) ? nests_label : "#{nested.humanize} details"
+    .panel-body
+      - if !ref_chain.empty? && ref_chain !~ /\./ && !!(item = instance_variable_get("@#{ref_chain}"))
+        = show_for item do |f|
+          = render "view_#{nested}_fields", f: f, locals: {nested: nested, has_one: has_one}
+      -else
+        - build_nested_view_fields(f, ref_chain) do |f|
+          = render "view_#{nested}_fields", f: f, locals: {nested: nested, has_one: has_one}

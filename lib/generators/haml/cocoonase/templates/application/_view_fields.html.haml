@@ -1,0 +1,5 @@
+%section[item]
+  %dl.dl-horizontal
+    - item.class.columns_hash.each do |name, attribute|
+      %dt= t ".#{name}", default: "#{name}".titleize
+      %dd!= custom_view item, name

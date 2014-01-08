@@ -1,0 +1,21 @@
+- has_one = !!(defined?(locals) && locals[:has_one])
+.nested-fields[f.object]
+  - unless has_one
+    = link_to_remove_association '✖', f,
+        class: 'close', title: t('.destroy_<%= ref_name %>',
+        default: 'Destroy <%= ref_name.titleize %>'),
+        data: {confirm: t('.confirm', default: 'Are you sure?')}
+  - unless f.object.new_record?
+    = f.input :id, custom_edit(f.object, 'id')
+<% ref_belongs_to.each do |name, att| -%>
+  = f.association :<%= att.name %>, custom_edit(f.object, '<%= att.name %>')
+<% end -%>
+<% ref_attributes.each do |name, att| -%>
+  = f.input :<%= att.name %>, custom_edit(f.object, '<%= att.name %>')
+<% end -%>
+  - unless f.object.new_record?
+    %br
+<% ref_hidden_attributes.each do |name, att| next if name == 'id'; -%>
+    = f.input :<%= att.name %>, custom_edit(f.object, '<%= att.name %>')
+<% end -%>
+  %hr
