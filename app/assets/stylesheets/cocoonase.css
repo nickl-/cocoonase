@@ -11,6 +11,30 @@
  *= require bootstrap-wysihtml5
  */
 
+input[type='number'] {
+    text-align: right;
+}
+
+.nested-group .panel-body {
+    padding: 15px 30px;
+}
+.nested-group .panel-default {
+    border-color: #428bca;
+}
+.nested-group .panel-default>.panel-heading {
+    background-image: -webkit-gradient(linear,left 0,left 100%,from(#428bca),to(#1B60DE));
+    background-image: -webkit-linear-gradient(top,#428bca 0, #2377D7 100%);
+    background-image: -moz-linear-gradient(top, #428bca 0, #2377D7 100%);
+    background-image: linear-gradient(to bottom, #428bca 0, #2377D7 100%);
+    background-repeat: repeat-x;
+    color: white;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#ffe8e8e8',GradientType=0);
+}
+
+.nested-fields.dynamic {
+    padding: 0 30px;
+    margin-top: -16px;
+}
 
 /*.nested-fields .close {*/
     /*margin-right: 40px;*/
@@ -104,7 +128,7 @@
 /*}*/
 
 
-div#footer {
+footer {
     padding: 10px;
     margin-top: 20px;
     border-top: 1px solid lightgrey;
