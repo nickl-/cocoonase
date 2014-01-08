@@ -19,15 +19,15 @@ module Cocoonase
     end
 
     def action_grid_show item, options={}
-      action_grid_button '.show', 'primary', { default: 'Show', icon: 'icon-file-text-alt icon-2x', path: resource_url(item) }.deep_merge(options)
+      action_grid_button '.show', 'primary', { default: 'Show', icon: 'fa fa-file-text-o fa-2x', path: resource_url(item) }.deep_merge(options)
     end
 
     def action_grid_edit item, options={}
-      action_grid_button '.edit', 'success', { default: 'Edit', icon: 'icon-edit icon-2x', path: edit_resource_url(item) }.deep_merge(options)
+      action_grid_button '.edit', 'success', { default: 'Edit', icon: 'fa fa-edit fa-2x', path: edit_resource_url(item) }.deep_merge(options)
     end
 
     def action_grid_destroy item, options={}
-      action_grid_button '.destroy', 'danger', { default: 'Destroy', icon: 'icon-remove icon-2x',
+      action_grid_button '.destroy', 'danger', { default: 'Destroy', icon: 'fa fa-times fa-2x',
           path: resource_url(item), data: { confirm: t('.confirm_destroy', default: 'Are you sure?') }, method: :delete }.deep_merge(options)
     end
 
@@ -43,7 +43,7 @@ module Cocoonase
       options = {
           default: "New #{resource_name.humanize}",
           path: new_resource_url,
-          icon: 'icon-file-alt',
+          icon: 'fa fa-file-o',
       }
       content_tag 'li', action_link(".new_#{resource_name}", options), class: "#{'active' if page == 'new'}"
     end
@@ -52,7 +52,7 @@ module Cocoonase
       options = {
           default: "All #{resource_name.humanize.pluralize}",
           path: collection_url,
-          icon: 'iconic-document-stroke',
+          icon: 'fa fa-list-alt',
       }
       content_tag 'li', action_link(".all_#{resource_name}", options), class: "#{'active' if page == 'all'}"
     end
@@ -60,7 +60,7 @@ module Cocoonase
     def action_nav_edit page
       return if %w(new all).include?(page)
       options = {  default: "Edit This #{resource_name.humanize}",
-                   icon: 'icon-edit',
+                   icon: 'fa fa-edit',
                    path: edit_resource_url
       }
       content_tag 'li', action_link(".edit_#{resource_name}", options),
@@ -70,7 +70,7 @@ module Cocoonase
     def action_nav_show page
       return if %w(new all).include?(page)
       options = { default: "Show This #{resource_name.humanize}",
-                  icon: 'icon-file-text-alt',
+                  icon: 'fa fa-file-text-o',
                   path: resource_url
       }
       content_tag 'li', action_link(".edit_#{resource_name}", options),
@@ -82,12 +82,12 @@ module Cocoonase
       back_title = request.referrer[/\/(\w+)\??[^\/]*$/,1]
       back_title = request.referrer[/\/([^\/]+)\/#{back_title}/,1].singularize if back_title =~ /\d/
       content_tag('li', action_link('.go_back', default: "Back to #{back_title.humanize.downcase}",
-         icon: 'icon-hand-left', path: request.referrer)) unless back_title.nil?
+         icon: 'fa fa-hand-o-left', path: request.referrer)) unless back_title.nil?
     end
 
     def action_nav_up
       content_tag('li', action_link('.go_back', default: "Up to #{parent_name.humanize}",
-         icon: 'icon-hand-up', path: parent_url)) if !!defined?(parent)
+         icon: 'fa fa-hand-o-up', path: parent_url)) if !!defined?(parent)
     end
 
     def nav_menu name
@@ -281,8 +281,8 @@ module Cocoonase
     end
 
     def boolean_view value, meta
-      return '<i class="iconic-o-check alert-success icon-2x"></i>'.html_safe if value
-      '<i class="iconic-o-x icon-2x"></i>'.html_safe
+      return '<i class="fa fa-check fa-2x"></i>'.html_safe if value
+      '<i class="fa fa-times-circle fa-2x"></i>'.html_safe
     end
 
     def datetime_view value, meta=nil
@@ -311,23 +311,23 @@ module Cocoonase
       col.each { |k,v| value = k if value == v }
       case meta.name
         when 'link'
-          link_to '<i class="iconic-link"></i> ACK'.html_safe, 'javascript:void(0);', data: {url: value}, onclick: "acknowledge(this);return false;"
+          link_to '<i class="fa fa-link"></i> ACK'.html_safe, 'javascript:void(0);', data: {url: value}, onclick: "acknowledge(this);return false;"
         when 'bondIndicator', 'instruction', 'MLA'
           boolean_view value == 'Y', meta
         when 'payload'
-          link_to "<i class=#{'"iconic-download"'}></i> #{value.file.path[/([^\/]*)$/, 1]}".html_safe, payload_url(value), title: 'download'
+          link_to "<i class=#{'"fa fa-download"'}></i> #{value.file.path[/([^\/]*)$/, 1]}".html_safe, payload_url(value), title: 'download'
         when /email/i, /e_mail/i
-          "#{'<i class="icon-envelope-alt"></i>'} #{mail_to value}".html_safe
+          "#{'<i class="fa fa-envelope-o"></i>'} #{mail_to value}".html_safe
         when  /.*amount.*/i, /.*deposit.*/i, /.*price.*/i, /.*cost.*/i, /.*cash.*/i, /.*interest$/i, /.*payment.*/i, /.*fee.*/i, /.*debt.*/i, /.*premium.*/i
           number_to_currency value, unit: 'R', separator: '.'
         when  /.*rate$/i, /.*percent.*/i, /variance/i
           number_to_percentage value, format: "%n %", precision: 2
         when /.*fax.*/i
-          "#{'<i class="icon-print"></i>'} #{value}".html_safe
+          "#{'<i class="fa fa-print"></i>'} #{value}".html_safe
         when /.*mobile.*/i, /.*cel.*/i
-          "#{'<i class="iconic-iphone"></i>'} #{value}".html_safe
+          "#{'<i class="fa fa-mobile"></i>'} #{value}".html_safe
         when  /.*tel.*/i, /.*phone.*/i
-          "#{'<i class="icon-phone"></i>'} #{value}".html_safe
+          "#{'<i class="fa fa-phone"></i>'} #{value}".html_safe
         else
           value
 

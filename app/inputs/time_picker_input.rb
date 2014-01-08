@@ -1,6 +1,6 @@
 class TimePickerInput < DateTimePickerInput
   def icon_class
-    'icon-time'
+    'fa fa-clock-o'
   end
 
   def picker_class

@@ -13,13 +13,13 @@ class ButtonFileInput < SimpleForm::Inputs::FileInput
     field_preview = link_to(image_tag("#{payload_url(field_value)}?thumb=1"), payload_url(field_value)) if field_type == 'image'
 
     out = <<eod
-<div class="fileupload #{ field_value.blank? ? 'fileupload-new' : 'fileupload-exists' }" data-provides="fileupload">
-  <span class="btn btn-file"><span class="fileupload-new">Select #{field_type}</span>
-    <span class="fileupload-exists">Change</span>#{ super }</span>
-  <span class="fileupload-preview fileupload-exists#{' thumbnail" style="width: 70px; height: 100px;' if field_type == 'image'}">
+<div class="fileinput #{ field_value.blank? ? 'fileinput-new' : 'fileinput-exists' }" data-provides="fileinput">
+  <span class="btn btn-file"><span class="fileinput-new">Select #{field_type}</span>
+    <span class="fileinput-exists">Change</span>#{ super }</span>
+  <span class="fileinput-preview fileinput-exists#{' thumbnail" style="width: 70px; height: 100px;' if field_type == 'image'}">
     #{ field_preview }
   </span>
-  <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">×</a>
 </div>
 eod
 

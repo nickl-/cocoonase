@@ -13,7 +13,7 @@ eod
   protected
 
   def icon_class
-    'icon-calendar'
+    'fa fa-calendar'
   end
 
   def picker_class
