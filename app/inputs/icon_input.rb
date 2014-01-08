@@ -8,6 +8,7 @@ class IconInput < SimpleForm::Inputs::StringInput
       append = !!(icon_append = input_html_options.delete(:icon_append))
       prepend = !!(icon_prepend = input_html_options.delete(:icon_prepend))
     end
+    (input_html_options[:class] |= []).append 'form-control'
     out = <<eod
 <div class="input-group">
   #{add_on(title, icon_prepend) if prepend}

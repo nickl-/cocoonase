@@ -2,6 +2,7 @@ class CurrencyInput < SimpleForm::Inputs::NumericInput
   def input
     input_html_options[:placeholder] ||= "0.00"
     input_html_options[:step] = 0.01
+    (input_html_options[:class] |= []).append 'form-control'
     input_field = super
     input_id = input_field[/ id="(\w*)/, 1]
     input_html_options[:currency] ||= currency

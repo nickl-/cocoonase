@@ -1,6 +1,7 @@
 class DateTimePickerInput < SimpleForm::Inputs::StringInput
 
   def input
+    (input_html_options[:class] |= []).append 'form-control'
     out = <<-eod
 <div class="input-group date #{picker_class}" data-date="#{input_html_options[:value]}">
   #{@builder.text_field(attribute_name, input_html_options)}
