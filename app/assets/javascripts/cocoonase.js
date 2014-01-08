@@ -1,6 +1,6 @@
 //= require bootstrap
 //= require cocoon
-//= require masonry-docs.min
+//= require masonry
 //= require select2
 //= require bootstrap-switch
 //= require bootstrap-timepicker
@@ -129,6 +129,5 @@
         });
         $('.well .row .stamp').css('position', 'relative');
     }
-
 
 })(window.jQuery, window, window.document);

@@ -80,6 +80,8 @@ module Css
               "#{path}/stylesheets/select2x2.png"
           get 'https://raw.github.com/t0m/select2-bootstrap-css/bootstrap3/select2-bootstrap.css',
               "#{path}/stylesheets/select2-bootstrap.css"
+          get 'http://masonry.desandro.com/masonry.pkgd.min.js',
+              "#{path}/stylesheets/masonry.js"
         else
           say_status :skip,'found bootstrap use --no-skip-bootstrap to install', :yellow
         end
