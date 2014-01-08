@@ -10,3 +10,103 @@
  *= require bootstrap-datetimepicker
  *= require bootstrap-wysihtml5
  */
+
+
+.nested-fields .close {
+    margin-right: 40px;
+}
+.table-condensed td {
+    padding: 1px 5px;
+}
+
+.table-condensed td .icon-2x {
+    font-size: 1.4em;
+}
+
+form {
+    margin: 0;
+}
+
+input {
+    width: 327px;
+}
+
+div.progress {
+    width: 341px;
+}
+
+div.datetime-picker input[type='text'],
+div.date-picker input[type='text'],
+div.time-picker input[type='text'],
+div.input-group input {
+    width: 300px;
+    display: inline;
+}
+
+input.decimal,
+input[type='number'] {
+    text-align: right;
+}
+
+div.input-prepend-and-append input {
+    width: 273px;
+}
+
+div.controls div.select2-container {
+    width: 342px;
+}
+
+td.actions {
+    white-space: nowrap;
+}
+
+.form-actions {
+    background-color: white;
+    border-top: 2px solid #213669;
+    padding: 10px;
+}
+
+div.form-actions a,
+div.form-actions input {
+    text-transform:lowercase;
+}
+
+li.disabled,
+li.disabled a,
+div.subnav .nav > li.disabled > a {
+    cursor: not-allowed;
+    color: #ccc;
+}
+
+.center {
+    float:none;
+    margin:0 auto;
+    width: 100%;
+}
+
+p.help-block,
+.form-horizontal .controls,
+.form-horizontal .well .controls,
+.dl-horizontal dd {
+    margin-left: 40%;
+    padding-left: 15px;
+    word-wrap: break-word;
+}
+
+.form-horizontal .control-label,
+.form-horizontal .well .control-label,
+.dl-horizontal dt {
+    width: 40%;
+}
+
+.form-horizontal .control-group {
+    margin-bottom: 10px;
+}
+
+
+div#footer {
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid lightgrey;
+}
+
