@@ -9,7 +9,7 @@ class IconInput < SimpleForm::Inputs::StringInput
       prepend = !!(icon_prepend = input_html_options.delete(:icon_prepend))
     end
     out = <<eod
-<div class="#{'input-prepend' if prepend}#{' input-prepend-and-append ' if prepend && append}#{'input-append' if append}">
+<div class="input-group">
   #{add_on(title, icon_prepend) if prepend}
   #{super}
   #{add_on(title, icon_append) if append}
@@ -23,7 +23,7 @@ eod
   def add_on title, icon
     icon = %Q(<i class="#{icon}"></i>) if icon =~ /^icon/
     <<eod
-<span class="add-on" title="#{title}">#{icon}</span>
+<span class="input-group-addon" title="#{title}">#{icon}</span>
 eod
   end
 end

@@ -6,10 +6,10 @@ class CurrencyInput < SimpleForm::Inputs::NumericInput
     input_id = input_field[/ id="(\w*)/, 1]
     input_html_options[:currency] ||= currency
     out = <<-HTML
-<div class="input-prepend input-prepend-and-append input-append">
-  <span class="add-on">#{input_html_options[:currency]}</span>
+<div class="input-group">
+  <span class="input-group-addon">#{input_html_options[:currency]}</span>
   #{input_field}
-  <span class="add-on">&nbsp;</span>
+  <span class="input-group-addon">&nbsp;</span>
   <script type="text/javascript">
     (function (document) {
       function currency_value () {
