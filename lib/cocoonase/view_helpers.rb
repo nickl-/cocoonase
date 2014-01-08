@@ -14,20 +14,20 @@ module Cocoonase
     end
 
     def action_grid_button key, btn_type, options={}
-      options[:class] = "btn btn-#{btn_type} btn-mini"
+      options[:class] = "btn btn-#{btn_type} btn-xs"
       action_link key, options
     end
 
     def action_grid_show item, options={}
-      action_grid_button '.show', 'primary', { default: 'Show', icon: 'fa fa-file-text-o fa-2x', path: resource_url(item) }.deep_merge(options)
+      action_grid_button '.show', 'primary', { default: 'Show', icon: 'fa fa-file-text-o', path: resource_url(item) }.deep_merge(options)
     end
 
     def action_grid_edit item, options={}
-      action_grid_button '.edit', 'success', { default: 'Edit', icon: 'fa fa-edit fa-2x', path: edit_resource_url(item) }.deep_merge(options)
+      action_grid_button '.edit', 'success', { default: 'Edit', icon: 'fa fa-edit', path: edit_resource_url(item) }.deep_merge(options)
     end
 
     def action_grid_destroy item, options={}
-      action_grid_button '.destroy', 'danger', { default: 'Destroy', icon: 'fa fa-times fa-2x',
+      action_grid_button '.destroy', 'danger', { default: 'Destroy', icon: 'fa fa-times',
           path: resource_url(item), data: { confirm: t('.confirm_destroy', default: 'Are you sure?') }, method: :delete }.deep_merge(options)
     end
 
