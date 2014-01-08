@@ -1,5 +1,5 @@
 = show_for item do |f|
-  .container.well
+  .well
     .row
       .col-md-6= render 'view_nests', f: f, nested: '<%= singular_name %>', ref_chain: '', has_one: true
 <% references.each do |name, att|-%>

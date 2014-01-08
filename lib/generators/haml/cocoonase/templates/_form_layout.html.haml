@@ -2,7 +2,7 @@
     url: resource.new_record? ? collection_url : resource_url,
     method: resource.new_record? ? :post : :put,
     html: { class: 'form-horizontal' }) do |f|
-  .container.well
+  .well
     .row
       .col-md-12= f.error_notification
     .row
