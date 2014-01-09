@@ -94,6 +94,10 @@ module Cocoonase
       tabs(name)[/.*tabs">(.*)<\/ul>/m,1]
     end
 
+    def nav_menu_headers name
+      nav_menu(name).gsub(/<li><a href="#" >(.*?)<\/a>/,'<li role="presentation" class="dropdown-header">\1').html_safe
+    end
+
     def nav_user name
       return nav_menu(name) unless user_signed_in?
       nav_menu(name).sub(/users\/sign_out"/,'users/sign_out" data-method="delete"').gsub(/li/,'li class="devise"').html_safe
