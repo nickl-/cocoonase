@@ -2,7 +2,7 @@ class PhoneNumberInput < IconInput
   def input
     (input_html_options[:data] ||={})[:mask] = '+27(99)999-9999'
     input_html_options[:data][:placeholder] = ' '
-    input_html_options[:icon] = 'fa fa-phone' unless
+    input_html_options[:icon] = '<i class="fa fa-phone"></i>' unless
         [:icon, :icon_prepend, :icon_append].any? {|k| input_html_options.key? k}
     input_html_options[:icon_title] = 'Telephone number' if input_html_options[:icon_title].nil?
     input_html_options[:type] = 'text'
