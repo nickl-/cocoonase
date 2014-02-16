@@ -10,6 +10,8 @@ module Css
       def copy_stylesheet
         path = File.expand_path('../../../../../app/assets', __FILE__);
         if Dir.glob("#{path}/bootstrap*").blank? || options[:skip_bootstrap] == false
+          get 'http://code.jquery.com/jquery-1.11.0.min.js',
+              "#{path}/javascripts/jquery.js"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/js/bootstrap.min.js',
               "#{path}/javascripts/bootstrap.js"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/css/bootstrap.min.css',
