@@ -19,23 +19,23 @@ module Css
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/css/bootstrap-theme.min.css',
               "#{path}/stylesheets/bootstrap-theme.css"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/fonts/glyphicons-halflings-regular.eot',
-              "#{path}/fonts/glyphicons-halflings-regular.eot"
+              "#{Rails.root}/public/fonts/glyphicons-halflings-regular.eot"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/fonts/glyphicons-halflings-regular.woff',
-              "#{path}/fonts/glyphicons-halflings-regular.woff"
+              "#{Rails.root}/public/fonts/glyphicons-halflings-regular.woff"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/fonts/glyphicons-halflings-regular.ttf',
-              "#{path}/fonts/glyphicons-halflings-regular.ttf"
+              "#{Rails.root}/public/fonts/glyphicons-halflings-regular.ttf"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/fonts/glyphicons-halflings-regular.svg',
-              "#{path}/fonts/glyphicons-halflings-regular.svg"
+              "#{Rails.root}/public/fonts/glyphicons-halflings-regular.svg"
           get 'https://raw.github.com/FortAwesome/Font-Awesome/v4.0.3/css/font-awesome.min.css',
               "#{path}/stylesheets/font-awesome.css"
           get 'https://raw.github.com/FortAwesome/Font-Awesome/v4.0.3/fonts/fontawesome-webfont.eot',
-              "#{path}/fonts/fontawesome-webfont.eot"
+              "#{Rails.root}/public/fonts/fontawesome-webfont.eot"
           get 'https://raw.github.com/FortAwesome/Font-Awesome/v4.0.3/fonts/fontawesome-webfont.woff',
-              "#{path}/fonts/fontawesome-webfont.woff"
+              "#{Rails.root}/public/fonts/fontawesome-webfont.woff"
           get 'https://raw.github.com/FortAwesome/Font-Awesome/v4.0.3/fonts/fontawesome-webfont.ttf',
-              "#{path}/fonts/fontawesome-webfont.ttf"
+              "#{Rails.root}/public/fonts/fontawesome-webfont.ttf"
           get 'https://raw.github.com/FortAwesome/Font-Awesome/v4.0.3/fonts/fontawesome-webfont.svg',
-              "#{path}/fonts/fontawesome-webfont.svg"
+              "#{Rails.root}/public/fonts/fontawesome-webfont.svg"
           get 'https://raw.github.com/abilian/bootstrap-timepicker/3.x/js/bootstrap-timepicker.min.js',
               "#{path}/javascripts/bootstrap-timepicker.js"
           get 'https://raw.github.com/abilian/bootstrap-timepicker/3.x/css/bootstrap-timepicker.min.css',
