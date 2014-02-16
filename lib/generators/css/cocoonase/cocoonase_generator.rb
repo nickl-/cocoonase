@@ -8,7 +8,7 @@ module Css
                    :desc => "Skip installing bootstrap when found. Use --no-skip-bootstrap instead."
 
       def copy_stylesheet
-        path = File.expand_path('../../../../../app/assets', __FILE__);
+        path = Rails.root.join('vendor','assets');
         if Dir.glob("#{path}/bootstrap*").blank? || options[:skip_bootstrap] == false
           get 'http://code.jquery.com/jquery-1.11.0.min.js',
               "#{path}/javascripts/jquery.js"
