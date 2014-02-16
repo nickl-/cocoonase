@@ -121,7 +121,7 @@
 //            if ($(this).css('display') != 'none')
 //                $(this).addClass('Editor').attr('rows', 5).wysihtml5();
 //        });
-
+        $('input[type="checkbox"]')['bootstrapSwitch']();
         $('.well .row').last().masonry({
             gutter: 0,
             itemSelector: '.col-md-6',
