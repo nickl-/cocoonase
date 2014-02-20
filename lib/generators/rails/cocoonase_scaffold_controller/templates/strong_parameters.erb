@@ -1,2 +1,2 @@
 ,
-      <%= indentation %><%= attribute_name %>_attributes: [:_destroy, :id, <%= permissible %><%= recurse %>]
+      <%= indentation %><%= defined?(ActiveRecord::ATTRIBUTES_REMOVED) ? attribute_name.pluralize : "#{attribute_name}_attributes"  %>: [:_destroy, :id, <%= permissible %><%= recurse %>]
