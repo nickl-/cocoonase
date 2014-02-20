@@ -8,8 +8,12 @@ class <%= migration_class_name %> < ActiveRecord::Migration
       t.<%= attribute.type %> :<%= attribute.name %><%= attribute.inject_options %>
 <% end -%>
 <% end -%>
+<% if options[:timestamps] %>
       t.timestamps
+<% end -%>
+<% if options[:authorstamps] %>
       t.authorstamps
+<% end -%>
     end
 <% attributes_with_index.each do |attribute| -%>
     add_index :<%= table_name %>, :<%= attribute.index_name %><%= attribute.inject_index_options %>
