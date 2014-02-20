@@ -1,6 +1,6 @@
 class <%= migration_class_name %> < ActiveRecord::Migration
   def change
-    create_table :<%= table_name %>, :force => true do |t|
+    create_table :<%= table_name %>, force: true do |t|
 <% attributes.each do |attribute| next if "#{attribute.type}" == 'has_and_belongs_to_many'  -%>
 <% if attribute.password_digest? -%>
       t.string :password_digest<%= attribute.inject_options %>
