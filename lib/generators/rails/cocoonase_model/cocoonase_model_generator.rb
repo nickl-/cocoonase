@@ -142,7 +142,7 @@ module Rails
       end
 
       def habtm_table_name
-        (class_path + habtm_references.map(&:pluralize)).join('_')
+        (class_path + [habtm_references.first, habtm_references.last[/[^_]*$/]].map(&:pluralize)).join('_')
       end
 
       def habtm_migration_name
