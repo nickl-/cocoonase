@@ -1,10 +1,5 @@
 class <%= controller_class_name %>Controller < InheritedResources::Base
-  require Rails.root.join 'lib/application_responder'
-  self.responder = ApplicationResponder
-  respond_to :html, :xml, :json
   has_scope <%= by_attributes %>
-
-  #protect_from_forgery  with: :exception
 
 <% if options[:singleton] -%>
   defaults singleton: true
@@ -12,14 +7,6 @@ class <%= controller_class_name %>Controller < InheritedResources::Base
 
   def can? action, type
     true
-  end
-
-  def create
-    create! { collection_url }
-  end
-
-  def update
-    update! { collection_url }
   end
 
   protected
