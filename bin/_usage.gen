@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $# -eq 0 ] ; then
+cat <<EOD
+    Required arguments missing, try:
+    Usage:
+        script.gen --force --migration --indexes --force-plural
+
+EOD
+exit 1
+fi
+

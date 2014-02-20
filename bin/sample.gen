@@ -1,0 +1,11 @@
+#!/bin/bash
+nmspce=abc
+
+`dirname $0`/_usage.gen "$@" || exit 1
+
+rm -rf app/models/${nmspce} app/serializers/${nmspce} app/controllers/${nmspce} app/views/${nmspce} db/migrate/*_create_${nmspce}_* test/models/${nmspce} test/fixtures/${nmspce} test/controllers/${nmspce}
+
+
+
+`dirname $0`/bond_scaffold.gen "$@"
+`dirname $0`/_patches.gen "${nmspce}"

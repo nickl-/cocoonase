@@ -1,0 +1,3 @@
+add patches per namespace 
+
+i.e. bin/patches/abc/models.patch

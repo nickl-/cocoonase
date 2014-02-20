@@ -1,0 +1,6 @@
+#!/bin/bash
+
+name="bin/patches/${1%.*}"
+for p in $(ls $name); do
+  patch -f -N -F20 -p0 --posix --no-backup-if-mismatch --directory="$(pwd)" --input="$name/$p" --reject-file="tmp/patch-reject/${p}.rej"
+done
