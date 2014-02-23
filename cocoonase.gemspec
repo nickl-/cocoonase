@@ -34,7 +34,7 @@ easily be interchanged. All dependencies, gems and client side components are al
 #  spec.add_dependency 'desponders', '0.3.0'
   spec.add_dependency 'has_scope', '0.6.0.rc'
   spec.add_dependency 'carrierwave', '0.9.0'
-  spec.add_dependency 'country_select', '1.2.0'
+#  spec.add_dependency 'country_select', '1.2.0'
 #  spec.add_dependency 'tabulous', '2.1.0'
   spec.add_dependency 'kaminari', '0.15.0'
 #spec.add_dependency 'ar-audit-tracer', '2.0.0'
