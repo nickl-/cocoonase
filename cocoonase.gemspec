@@ -21,7 +21,7 @@ easily be interchanged. All dependencies, gems and client side components are al
   spec.license       = "BSD 3-Clause"
 
   spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) unless f =~ /patches/ }
+  spec.executables   = spec.files.grep(%r{^bin/}).select { |f| File.basename(f) unless f =~ /patches/ }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
