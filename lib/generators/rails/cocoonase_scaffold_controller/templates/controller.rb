@@ -1,5 +1,10 @@
 class <%= controller_class_name %>Controller < InheritedResources::Base
+  require Rails.root.join 'lib/application_responder'
+  self.responder = ApplicationResponder
+  respond_to :html, :xml, :json
   has_scope <%= by_attributes %>
+
+  #protect_from_forgery  with: :exception
 
 <% if options[:singleton] -%>
   defaults singleton: true
