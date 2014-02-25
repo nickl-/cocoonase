@@ -28,7 +28,7 @@ easily be interchanged. All dependencies, gems and client side components are al
   spec.add_dependency 'cocoon', '1.2.1'
   spec.add_dependency 'simple_form', '3.0.1'
   spec.add_dependency 'show_for', '0.3.0.rc'
-  spec.add_dependency 'active_model_serializers', '0.8.1' #, '0.9.0.alpha1'
+  spec.add_dependency 'active_model_serializers', '0.9.0.alpha1'
   spec.add_dependency 'inherited_resources', '1.4.1'
 #  spec.add_dependency 'responders', '1.0.0.rc'
 #  spec.add_dependency 'desponders', '0.3.0'
