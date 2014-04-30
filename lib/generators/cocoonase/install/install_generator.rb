@@ -9,6 +9,8 @@ module Cocoonase
         if Dir.glob("#{path}/bootstrap*").blank? || options[:skip_bootstrap] == false
           get 'http://code.jquery.com/jquery-1.11.0.min.js',
               "#{path}/javascripts/jquery.js"
+          get 'https://raw.githubusercontent.com/rails/jquery-ujs/master/src/rails.js',
+              "#{path}/javascripts/rails.js"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/js/bootstrap.min.js',
               "#{path}/javascripts/bootstrap.js"
           get 'https://raw.github.com/jasny/bootstrap/v3.0.1-p7/dist/css/bootstrap.min.css',

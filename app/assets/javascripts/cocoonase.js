@@ -1,3 +1,5 @@
+//= require jquery
+//= require rails
 //= require bootstrap
 //= require cocoon
 //= require masonry
