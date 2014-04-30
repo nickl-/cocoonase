@@ -43,9 +43,9 @@ module Cocoonase
               "#{path}/javascripts/bootstrap-datetimepicker.js"
           get 'https://raw.github.com/smalot/bootstrap-datetimepicker/2.2.0/css/bootstrap-datetimepicker.min.css',
               "#{path}/stylesheets/bootstrap-datetimepicker.css"
-          get 'https://raw.github.com/nostalgiaz/bootstrap-switch/3.0/build/js/bootstrap-switch.min.js',
+          get 'https://raw.githubusercontent.com/nostalgiaz/bootstrap-switch/v3.0.0/dist/js/bootstrap-switch.min.js',
               "#{path}/javascripts/bootstrap-switch.js"
-          get 'https://raw.github.com/nostalgiaz/bootstrap-switch/3.0/build/css/bootstrap3/bootstrap-switch.min.css',
+          get 'https://raw.githubusercontent.com/nostalgiaz/bootstrap-switch/v3.0.0/dist/css/bootstrap3/bootstrap-switch.min.css',
               "#{path}/stylesheets/bootstrap-switch.css"
           get 'https://raw.github.com/artillery/bootstrap-wysihtml5/master/dist/bootstrap-wysihtml5-0.0.3.min.js',
               "#{path}/javascripts/bootstrap-wysihtml5.js"
