@@ -1,6 +1,7 @@
 <% module_namespacing do -%>
 class <%= class_name %> < <%= parent_class_name.classify %>
 <% if scope_attributes.include? 'payload' -%>
+  require 'upload_document'
   include UploadDocument
 <% end -%>
 <% attributes.select(&:reference?).each do |attribute| -%>
