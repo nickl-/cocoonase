@@ -3,6 +3,7 @@
 class ButtonFileInput < SimpleForm::Inputs::FileInput
   include ApplicationHelper
   include ActionView::Helpers::AssetTagHelper
+  include Cocoonase::ViewHelpers
 
   def input
     field_value = input_html_options[:data][:value] ?
