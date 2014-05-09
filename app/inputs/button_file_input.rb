@@ -1,5 +1,5 @@
-#require 'application_helper'
-#require 'action_view/helpers/asset_tag_helper'
+require 'application_helper'
+require 'action_view/helpers/asset_tag_helper'
 class ButtonFileInput < SimpleForm::Inputs::FileInput
   include ApplicationHelper
   include ActionView::Helpers::AssetTagHelper

@@ -1,8 +1,8 @@
 require 'rails/generators/generated_attribute'
 module Cocoonase
   module ViewHelpers
-    #include ActionView::Helpers::UrlHelper
-    #include Rails.application.routes.url_helpers
+    include ActionView::Helpers::UrlHelper
+    include Rails.application.routes.url_helpers
 
     def t_icon key, options={}
       icon = options.delete(:icon)
