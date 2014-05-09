@@ -10,8 +10,16 @@ module UploadDocument
       payload.file.filename rescue payload
     end
 
+    def payload_url
+      Rails.application.routes.url_helpers.download_file_path(ERB::Util.url_encode(payload.model.class), payload.model.id, 0)
+    end
+
+    def payload_thumb
+      Rails.application.routes.url_helpers.download_file_path(ERB::Util.url_encode(payload.model.class), payload.model.id, 1)
+    end
+
     def image?
-      payload.file.content_type.include? 'image' rescue false
+      payload.image? rescue false
     end
   end
 end

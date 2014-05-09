@@ -8,10 +8,6 @@ module Cocoonase
       "<i class='#{icon}'></i>&nbsp;#{t(key, options)}".html_safe
     end
 
-    def payload_url uploader
-      Rails.application.routes.url_helpers.download_file_path uploader.model.class, uploader.model.id
-    end
-
     def action_link key, options={}
       link_to t_icon(key, default: options.delete(:default), icon: options.delete(:icon)), options.delete(:path), options
     end
@@ -322,7 +318,8 @@ module Cocoonase
         when 'bondIndicator', 'instruction', 'MLA'
           boolean_view value == 'Y', meta
         when 'payload'
-          link_to "<i class=#{'"fa fa-download"'}></i> #{value.file.path[/([^\/]*)$/, 1]}".html_safe, payload_url(value), title: 'download'
+          return link_to(image_tag(value.model.payload_thumb, alt: "#{value.file.filename}"), value.model.payload_url, title: "Download #{value.file.filename}")  if (value.image?)
+          link_to "<i class=#{'"fa fa-download"'}></i> #{value.file.filename}".html_safe, value.model.payload_url, title: 'download'
         when /email/i, /e_mail/i
           "#{'<i class="fa fa-envelope-o"></i>'} #{mail_to value}".html_safe
         when  /.*amount.*/i, /.*deposit.*/i, /.*price.*/i, /.*cost.*/i, /.*cash.*/i, /.*interest$/i, /.*payment.*/i, /.*fee.*/i, /.*debt.*/i, /.*premium.*/i
