@@ -2,7 +2,6 @@ require 'rails/generators/generated_attribute'
 module Cocoonase
   module ViewHelpers
     include ActionView::Helpers::UrlHelper
-    #include Rails.application.routes.url_helpers
 
     def t_icon key, options={}
       icon = options.delete(:icon)
@@ -10,7 +9,7 @@ module Cocoonase
     end
 
     def payload_url uploader
-      download_file_path uploader.model.class, uploader.model.id
+      Rails.application.routes.url_helpers.download_file_path uploader.model.class, uploader.model.id
     end
 
     def action_link key, options={}
